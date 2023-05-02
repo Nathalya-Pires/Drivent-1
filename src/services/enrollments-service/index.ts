@@ -9,7 +9,7 @@ import { addressModel } from '@/protocols';
 async function getAddressFromCEP(cep: string): Promise<addressModel> {
   const result = await request.get(`${process.env.VIA_CEP_API}/${cep}/json/`);
 
-  if (!result.data) {
+  if (!result.data || result.data.erro) {
     throw notFoundError();
   }
 

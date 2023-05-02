@@ -17,6 +17,7 @@ export type addressModel = {
   bairro: string;
   cidade: string;
   uf: string;
+  errornp?: string;
 };
 
 export type RequestError = {
